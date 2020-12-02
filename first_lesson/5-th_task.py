@@ -17,6 +17,8 @@ if a>b:
     qty=int(qty)
     soul=int((a-b)/qty)
     print(f"А один сотрудник приносит в среднем {soul}.")
+elif a==b:
+    print("Работаете в ноль")
 else: print("Работаете в убыток.")
 
 

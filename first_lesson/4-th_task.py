@@ -12,5 +12,5 @@ try:
             b=a%10
         a=a//10
     print(f"Biggest charachter is {b}")
-except:
-    print("I said, give me a number! Digits, you know?")
+except Exception as err:
+    print(f"I said, give me a number! Digits, you know?\nError:{err}")
