@@ -17,3 +17,27 @@
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
+
+from copy import deepcopy
+
+
+goods = []
+features = {"название": "", "цена": "", "количество": "", "единица измерения": ""}
+analytics = {"название": [], "цена": [], "количество": [], "единица измерения": []}
+num = 0
+while True:
+    if input("Для выхода введите Q -> Enter, для продолжения - Enter").upper() == "Q":
+        break
+    num += 1
+    for f in features.keys():
+        fet = input(f"Введите значение свойства '{f}': ")  # Ввод свойства
+        features[f] = int(fet) if f in {"цена", "количество"} else fet  # меняем тип
+        analytics[f].append(features[f])  # Добавляем свойство в список товаров
+    goods.append((num, deepcopy(features)))
+    print(f"\n Текущая структура товаров: \n {'*' * 30}")
+    for good in goods:
+        print(good)
+    print(f"\n Текущая аналитика по товарам: \n {'*' * 30}")
+    for key, value in analytics.items():
+        print(f"{key[:25]:>30}: {value}")
+    print("*" * 30)
