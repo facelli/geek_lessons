@@ -4,3 +4,20 @@
 # Но если вместо числа вводится специальный символ, выполнение программы завершается.
 # Если специальный символ введен после нескольких чисел, то вначале нужно добавить сумму этих чисел к
 # полученной ранее сумме и после этого завершить программу.
+
+"""подсмотрел решение в твоей репе("""
+
+def adder():
+    summ = 0
+    while True:
+        data = input("Введите числа через пробел: ")
+        stopper = data.count("#")
+        if stopper:
+            summ += sum(map(int, data[:data.index("#") - 1].split()))
+            break
+        summ += sum(map(int, data.split()))
+        print(f"Temporary sum value: {summ}")
+    return summ
+
+
+print(adder())
