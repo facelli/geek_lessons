@@ -14,3 +14,4 @@ try:
     print(f"Biggest charachter is {b}")
 except Exception as err:
     print(f"I said, give me a number! Digits, you know?\nError: {err}")
+
